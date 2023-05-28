@@ -1,6 +1,6 @@
 package org.walruscode.effective_java.chap_2;
 
-import org.walruscode.effective_java.chap_2.internal.Dog;
+import org.walruscode.effective_java.chap_2.entities.Dog;
 
 public class Main {
 

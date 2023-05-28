@@ -1,4 +1,4 @@
-package org.walruscode.effective_java.chap_2.internal;
+package org.walruscode.effective_java.chap_2.entities;
 
 final class PuppyDog implements Dog {
 
