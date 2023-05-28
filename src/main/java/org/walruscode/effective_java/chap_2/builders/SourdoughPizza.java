@@ -9,8 +9,8 @@ class SourdoughPizza implements Pizza {
 
     private final ImmutableList<String> ingredients;
 
-    private SourdoughPizza(ImmutableList<String> ingredients) {
-        this.ingredients = ingredients;
+    private SourdoughPizza(DefaultBuilder builder) {
+        this.ingredients = builder.ingredients;
     }
 
     @Override
@@ -41,7 +41,7 @@ class SourdoughPizza implements Pizza {
 
         @Override
         public Pizza build() {
-            return new SourdoughPizza(ingredients);
+            return new SourdoughPizza(this);
         }
     }
 }
