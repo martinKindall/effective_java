@@ -3,6 +3,7 @@ package org.walruscode.effective_java.chap_2;
 import org.walruscode.effective_java.chap_2.builders.Pizza;
 import org.walruscode.effective_java.chap_2.entities.Dog;
 import org.walruscode.effective_java.chap_2.singletons.UniqueCat;
+import org.walruscode.effective_java.chap_2.singletons.UniqueParrot;
 
 import java.util.List;
 
@@ -28,5 +29,7 @@ public class Main {
 
     static void singleton() {
         System.out.println(UniqueCat.INSTANCE.greet());
+
+        System.out.println(UniqueParrot.INSTANCE.greet());
     }
 }

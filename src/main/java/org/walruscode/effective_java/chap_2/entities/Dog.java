@@ -9,6 +9,6 @@ public interface Dog {
     String bark();
 
     static Dog create() {
-        return new PuppyDog();
+        return PuppyDog.INSTANCE;
     }
 }
