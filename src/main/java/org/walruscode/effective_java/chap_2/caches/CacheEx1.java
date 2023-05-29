@@ -35,13 +35,11 @@ public class CacheEx1 {
 
         @Override
         public boolean equals(Object o) {
-            if (o == null) return false;
-
-            if (o instanceof Data) {
-                return value.equals(((Data) o).value);
+            if (!(o instanceof Data)) {   // includes null-checking
+                return false;
             }
 
-            return false;
+            return value.equals(((Data) o).value);
         }
 
         @Override
