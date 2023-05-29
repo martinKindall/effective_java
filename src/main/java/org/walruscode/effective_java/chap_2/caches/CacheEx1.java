@@ -42,7 +42,7 @@ public class CacheEx1 {
                 return false;
             }
 
-            return value.equals(((Data) o).value);
+            return Objects.equals(value, ((Data) o).value);
         }
 
         @Override
