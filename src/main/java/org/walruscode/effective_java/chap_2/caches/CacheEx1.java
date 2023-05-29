@@ -1,6 +1,7 @@
 package org.walruscode.effective_java.chap_2.caches;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.WeakHashMap;
 
 public class CacheEx1 {
@@ -30,6 +31,8 @@ public class CacheEx1 {
     static class Data {
         String value;
         Data(String value) {
+            Objects.requireNonNull(value);
+
             this.value = value;
         }
 
