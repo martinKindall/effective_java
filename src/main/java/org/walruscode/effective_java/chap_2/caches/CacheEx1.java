@@ -38,6 +38,8 @@ public class CacheEx1 {
 
         @Override
         public boolean equals(Object o) {
+            if (o == this) return true;
+
             if (!(o instanceof Data)) {   // includes null-checking
                 return false;
             }
