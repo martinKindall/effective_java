@@ -1,4 +1,4 @@
-package org.walruscode.effective_java.chap_2.equals_and_hash;
+package org.walruscode.effective_java.chap_3.equals_and_hash;
 
 public class NonAsymmetric {
 
