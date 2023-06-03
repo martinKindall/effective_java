@@ -3,7 +3,6 @@ package org.walruscode.effective_java.chap_3.comparable;
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class Comparing {
 
@@ -50,13 +49,13 @@ public class Comparing {
 
         @Override
         public int compareTo(@Nonnull Cat o) {
-            int nameComp = this.name.compareTo(o.name);
+            int comp = this.name.compareTo(o.name);
 
-            if (nameComp == 0) {
-                return this.age - o.age;
+            if (comp == 0) {
+                comp = Integer.compare(this.age, o.age);
             }
 
-            return nameComp;
+            return comp;
         }
     }
 }
