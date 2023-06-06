@@ -18,6 +18,10 @@ public class RawTypes {
 
         modifyNumbers(numbers);
         cannotModifyNumbers(numbers);
+
+//        setOfObjects(new HashSet<String>());   // does not compile
+        setOfObjects(new HashSet<>());   // does not compile
+        setOfObjectsAsSuperType(new HashSet<String>());
     }
 
     private static int setCounter(Object someSet) {
@@ -37,12 +41,23 @@ public class RawTypes {
     }
 
     // raw type - don't use this
-    private static void modifyNumbers(Set numbers) {
-        numbers.add("Hi there");  // corrupting the set
+    private static void modifyNumbers(Set objects) {
+        objects.add("Hi there");  // corrupting the set
     }
 
     // unbounded wildcards are safe and raw types are not
-    private static void cannotModifyNumbers(Set<?> numbers) {
-        // numbers.add("Hi there");  // cannot compile
+    private static void cannotModifyNumbers(Set<?> objects) {
+        // objects.add("Hi there");  // cannot compile
+    }
+
+    private static void setOfObjects(Set<Object> objects) {
+        objects.add("hello");
+    }
+
+    private static void setOfObjectsAsSuperType(HashSet<? extends Object> elements) {
+//        elements.add("hi there");   // does not compile
+        System.out.println("size: " + elements.size());
+
+        // ? extends Object is equivalent to plain ? (unbounded wildcard)
     }
 }
